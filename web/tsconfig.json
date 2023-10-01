@@ -2,10 +2,19 @@
     "compilerOptions": {
         "target": "es5",
         "module": "es6",
+        "strict": true,
         "outDir": "./dist/",
         "noImplicitAny": true,
         "jsx": "react",
         "allowJs": true,
-        "moduleResolution": "node"
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
     }
 }

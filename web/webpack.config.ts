@@ -1,10 +1,10 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from "path";
+import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-const getPath = (paths) => path.resolve(__dirname, ...paths);
+const getPath = (paths: string[]) => path.resolve(__dirname, ...paths);
 
-module.exports = {
+const config: webpack.Configuration = {
     entry: getPath(["source", "index.ts"]),
     output: {
         filename: "bundle.[contenthash].js",
@@ -30,3 +30,5 @@ module.exports = {
         new webpack.ProgressPlugin(),
     ],
 };
+
+export default config;
