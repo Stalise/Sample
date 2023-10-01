@@ -1,5 +1,6 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import { Configuration as WebpackConfiguration, ProgressPlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
 
@@ -21,7 +22,7 @@ export default (env: IEnvironmentVariables): Configuration => {
 
     return {
         mode,
-        entry: getPath(["source", "index.ts"]),
+        entry: getPath(["source", "index.tsx"]),
         output: {
             filename: "bundle.[contenthash].js",
             path: getPath(["build"]),
@@ -46,6 +47,14 @@ export default (env: IEnvironmentVariables): Configuration => {
             new ProgressPlugin(),
         ],
         devtool: isDev ? "inline-source-map" : undefined,
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    extractComments: false,
+                }),
+            ],
+        },
         devServer: {
             port: PORT,
             open: true,
