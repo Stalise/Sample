@@ -1,6 +1,7 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { Configuration as WebpackConfiguration, ProgressPlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
 
@@ -24,7 +25,7 @@ export default (env: IEnvironmentVariables): Configuration => {
         mode,
         entry: getPath(["source", "index.tsx"]),
         output: {
-            filename: "bundle.[contenthash].js",
+            filename: "bundle.[contenthash:4].js",
             path: getPath(["build"]),
             clean: true,
         },
@@ -35,16 +36,38 @@ export default (env: IEnvironmentVariables): Configuration => {
                     use: "ts-loader",
                     exclude: /node_modules/,
                 },
+                {
+                    test: /\.(c|sc)ss$/i,
+                    use: [
+                        isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+                        {
+                            loader: "css-loader",
+                            options: {
+                                modules: {
+                                    auto: true,
+                                    localIdentName: isDev
+                                        ? "[local]__[hash:base64:4]"
+                                        : "[hash:base64:8]",
+                                },
+                            },
+                        },
+                        "sass-loader",
+                    ],
+                },
             ],
         },
         resolve: {
-            extensions: [".tsx", ".ts", ".js"],
+            extensions: [".tsx", ".ts", ".js", ".module.scss"],
         },
         plugins: [
             new HtmlWebpackPlugin({
                 template: getPath(["public", "index.html"]),
             }),
             new ProgressPlugin(),
+            new MiniCssExtractPlugin({
+                filename: "bundle.[contenthash:4].css",
+                chunkFilename: "[name].[contenthash:4].css",
+            }),
         ],
         devtool: isDev ? "inline-source-map" : undefined,
         optimization: {
@@ -52,6 +75,9 @@ export default (env: IEnvironmentVariables): Configuration => {
             minimizer: [
                 new TerserPlugin({
                     extractComments: false,
+                    terserOptions: {
+                        output: { comments: false },
+                    },
                 }),
             ],
         },
