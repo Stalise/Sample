@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { Configuration as WebpackConfiguration, ProgressPlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
 
@@ -14,6 +15,7 @@ interface Configuration extends WebpackConfiguration {
 interface IEnvironmentVariables {
     mode: WebpackConfiguration["mode"];
     port: number;
+    analyze: boolean;
 }
 
 const getPath = (paths: string[]) => path.resolve(__dirname, ...paths);
@@ -74,6 +76,9 @@ export default (env: IEnvironmentVariables): Configuration => {
             new MiniCssExtractPlugin({
                 filename: "bundle.[contenthash:4].css",
                 chunkFilename: "[name].[contenthash:4].css",
+            }),
+            new BundleAnalyzerPlugin({
+                analyzerMode: env.analyze ? "server" : "disabled",
             }),
         ],
         devtool: isDev ? "inline-source-map" : undefined,
