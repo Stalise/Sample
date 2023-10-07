@@ -1,7 +1,9 @@
 import path from "path";
+
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import { Configuration as WebpackConfiguration, ProgressPlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
 
@@ -57,7 +59,12 @@ export default (env: IEnvironmentVariables): Configuration => {
             ],
         },
         resolve: {
-            extensions: [".tsx", ".ts", ".js", ".module.scss"],
+            extensions: [".js", ".tsx", ".ts", ".module.scss"],
+            plugins: [
+                new TsconfigPathsPlugin({
+                    extensions: [".js", ".tsx", ".ts", ".module.scss"],
+                }),
+            ],
         },
         plugins: [
             new HtmlWebpackPlugin({
