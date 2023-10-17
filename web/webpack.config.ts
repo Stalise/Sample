@@ -61,10 +61,10 @@ export default (env: IEnvironmentVariables): Configuration => {
             ],
         },
         resolve: {
-            extensions: [".js", ".tsx", ".ts", ".module.scss"],
+            extensions: [".js", ".tsx", ".ts"],
             plugins: [
                 new TsconfigPathsPlugin({
-                    extensions: [".js", ".tsx", ".ts", ".module.scss"],
+                    extensions: [".js", ".tsx", ".ts"],
                 }),
             ],
         },
