@@ -1,9 +1,8 @@
 import ReactDOM from "react-dom/client";
 
-import { App } from "components/app";
+import { App } from "components/common/app";
 
-import "assest/null.css";
-import "assest/globals.scss";
+import "assest/index.module.scss";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLDivElement
