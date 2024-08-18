@@ -12,13 +12,13 @@ import { Item } from "components/item";
 import { hundredItems } from "data/hundred-items";
 import { twoHundredItems } from "data/two-hundred-items";
 import { thousandItems } from "data/thousand-items";
-import type { ItemType } from "types/item";
+import type { IItem } from "types/common";
 
 import styles from "./index.module.scss";
 
 export const ProfilerCheck: React.FC = () => {
     // const [isPending, startTransition] = useTransition();
-    const [items, setItems] = useState<ItemType[]>([]);
+    const [items, setItems] = useState<IItem[]>([]);
 
     // const deferredItems = useDeferredValue(items);
 

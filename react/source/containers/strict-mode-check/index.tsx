@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 
 import { Item } from "components/item";
-import { ITodo } from "types/common";
+import type { ITodo } from "types/common";
 
 export const StrictModeCheck: FC = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);

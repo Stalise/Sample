@@ -1,6 +1,6 @@
-import type { ItemType } from "types/item";
+import type { IItem } from "types/common";
 
-export const hundredItems: ItemType[] = [
+export const hundredItems: IItem[] = [
     {
         id: 1,
         first_name: "Rhianon",
