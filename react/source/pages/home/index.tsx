@@ -8,6 +8,7 @@ import {
     RefCheck,
     EffectsCheck,
     RenderPropCheck,
+    FetchCheck,
 } from "containers";
 
 export const HomePage: FC = () => (
@@ -26,5 +27,6 @@ export const HomePage: FC = () => (
                 <span>Value {value > 5 ? "greater" : "less"} than 5</span>
             )}
         /> */}
+        {/* <FetchCheck /> */}
     </Fragment>
 );
