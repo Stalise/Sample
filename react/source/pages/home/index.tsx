@@ -6,6 +6,7 @@ import {
     StrictModeCheck,
     ContextCheck,
     RefCheck,
+    EffectsCheck,
 } from "containers";
 
 export const HomePage: FC = () => (
@@ -18,5 +19,6 @@ export const HomePage: FC = () => (
             <ContextCheck />
         </MyContextProvider> */}
         {/* <RefCheck /> */}
+        {/* <EffectsCheck /> */}
     </Fragment>
 );
