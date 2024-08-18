@@ -1,6 +1,7 @@
 import { FC, Fragment, StrictMode } from "react";
 
-import { ProfilerCheck, StrictModeCheck } from "containers";
+import { MyContextProvider } from "context/my-context/my-context-provider";
+import { ProfilerCheck, StrictModeCheck, ContextCheck } from "containers";
 
 export const HomePage: FC = () => (
     <Fragment>
@@ -8,5 +9,8 @@ export const HomePage: FC = () => (
         {/* <StrictMode>
             <StrictModeCheck />
         </StrictMode> */}
+        {/* <MyContextProvider>
+            <ContextCheck />
+        </MyContextProvider> */}
     </Fragment>
 );
