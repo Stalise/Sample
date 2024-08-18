@@ -1,9 +1,12 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, StrictMode } from "react";
 
-import { ProfilerCheck } from "containers";
+import { ProfilerCheck, StrictModeCheck } from "containers";
 
 export const HomePage: FC = () => (
     <Fragment>
-        <ProfilerCheck />
+        {/* <ProfilerCheck /> */}
+        {/* <StrictMode>
+            <StrictModeCheck />
+        </StrictMode> */}
     </Fragment>
 );
