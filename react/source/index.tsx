@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 
 import { App } from "components/common/app";
 
-import "assest/index.module.scss";
+import "assets/index.module.scss";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLDivElement
