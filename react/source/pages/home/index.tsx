@@ -9,6 +9,7 @@ import {
     EffectsCheck,
     RenderPropCheck,
     FetchCheck,
+    CallbackCheck,
 } from "containers";
 
 export const HomePage: FC = () => (
@@ -28,5 +29,6 @@ export const HomePage: FC = () => (
             )}
         /> */}
         {/* <FetchCheck /> */}
+        {/* <CallbackCheck /> */}
     </Fragment>
 );
