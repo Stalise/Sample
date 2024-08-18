@@ -1,5 +1,9 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 
-export const HomePage: FC = () => {
-    return <div>HomePage</div>;
-};
+import { ProfilerCheck } from "containers";
+
+export const HomePage: FC = () => (
+    <Fragment>
+        <ProfilerCheck />
+    </Fragment>
+);
