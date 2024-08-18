@@ -7,6 +7,7 @@ import {
     ContextCheck,
     RefCheck,
     EffectsCheck,
+    RenderPropCheck,
 } from "containers";
 
 export const HomePage: FC = () => (
@@ -20,5 +21,10 @@ export const HomePage: FC = () => (
         </MyContextProvider> */}
         {/* <RefCheck /> */}
         {/* <EffectsCheck /> */}
+        {/* <RenderPropCheck
+            render={(value) => (
+                <span>Value {value > 5 ? "greater" : "less"} than 5</span>
+            )}
+        /> */}
     </Fragment>
 );
