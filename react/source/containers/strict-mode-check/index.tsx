@@ -1,8 +1,8 @@
 import { useEffect, useState, FC } from "react";
 
-import Button from "@mui/material/Button";
 import axios from "axios";
 
+import { MyButton } from "components/my-button";
 import { Item } from "components/item";
 import type { ITodo } from "types/common";
 
@@ -26,9 +26,7 @@ export const StrictModeCheck: FC = () => {
 
     return (
         <div>
-            <Button variant="contained" onClick={() => setCount(count + 1)}>
-                Button
-            </Button>
+            <MyButton text="Button" onClick={() => setCount(count + 1)} />
             <div>{count}</div>
             {todos.length > 0 ? (
                 <div>

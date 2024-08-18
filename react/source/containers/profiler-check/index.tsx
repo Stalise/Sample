@@ -6,8 +6,7 @@ import {
     useDeferredValue,
 } from "react";
 
-import Button from "@mui/material/Button";
-
+import { MyButton } from "components/my-button";
 import { Item } from "components/item";
 import { hundredItems } from "data/hundred-items";
 import { twoHundredItems } from "data/two-hundred-items";
@@ -60,18 +59,10 @@ export const ProfilerCheck: React.FC = () => {
     return (
         <>
             <div>
-                <Button onClick={clearItems} variant="contained">
-                    Clear
-                </Button>
-                <Button onClick={addHundredItems} variant="contained">
-                    Add 100
-                </Button>
-                <Button onClick={addTwoHundredItems} variant="contained">
-                    Add 200
-                </Button>
-                <Button onClick={addNineHundredItems} variant="contained">
-                    Add 1000
-                </Button>
+                <MyButton text="Clear" onClick={clearItems} />
+                <MyButton text="Add 100" onClick={addHundredItems} />
+                <MyButton text="Add 200" onClick={addTwoHundredItems} />
+                <MyButton text="Add 1000" onClick={addNineHundredItems} />
             </div>
             <Profiler id="items" onRender={handleItemsRender}>
                 {/* {isPending && <h2>🌀 Loading...</h2>} */}
