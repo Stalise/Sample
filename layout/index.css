@@ -42,3 +42,21 @@
     font-size: 24px;
     font-weight: 400;
 }
+
+.title {
+    font-size: 35px;
+    margin-bottom: 20px;
+    transition: color 500ms;
+
+    &:hover {
+        color: crimson;
+    }
+}
+
+.button {
+    font-size: 25px;
+    padding: 10px 20px;
+    background-color: bisque;
+    /* border: 5px solid rebeccapurple; */
+    border-radius: 15px;
+}
