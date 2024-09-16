@@ -1,0 +1,44 @@
+@import "null.css";
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/latoregular-english.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 500;
+    src: url("fonts/latomedium-english.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 600;
+    src: url("fonts/latosemibold-english.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    src: url("fonts/latobold-english.woff2") format("woff2");
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: start;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 30px 50px;
+    background-color: #0099fd;
+    font-family: Lato, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}

@@ -1,21 +1,12 @@
 "use strict";
 
-document.getElementById("btn").onclick = () => {
-    console.time();
-    let n = 0;
+document.getElementById("btn").onclick = () => {};
 
-    while (n < 1e8) {
-        n++;
+document.getElementById("ttl").onclick = () => {};
 
-        let c = 0;
+function func1(a, b, c) {
+    // console.log(arguments);
+}
 
-        while (c < 1e2) {
-            c++;
-        }
-    }
-    console.timeEnd();
-};
-
-document.getElementById("ttl").onclick = () => {
-    console.log("title");
-};
+// func1(1, 2, 3);
+console.log(Function.prototype);
