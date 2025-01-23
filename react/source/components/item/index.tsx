@@ -2,9 +2,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-import type { ItemType } from "types/item";
+import type { IItem } from "types/common";
 
-const Component: React.FC<ItemType> = ({
+const Component: React.FC<IItem> = ({
     email,
     first_name,
     gender,
