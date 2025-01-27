@@ -1,21 +1,26 @@
 "use strict";
 
-document.getElementById("btn").onclick = () => {
-    console.time();
-    let n = 0;
+// document.getElementById("box").addEventListener(
+//     "click",
+//     (event) => {
+//         event.stopPropagation();
+//         console.log("box");
+//     },
+//     { capture: true }
+// );
 
-    while (n < 1e8) {
-        n++;
+// document.getElementById("btn").addEventListener(
+//     "click",
+//     (event) => {
+//         console.log("btn");
+//     },
+//     { capture: true }
+// );
 
-        let c = 0;
-
-        while (c < 1e2) {
-            c++;
-        }
+Array.prototype.myMap = function (callbackFn) {
+    var arr = [];
+    for (var i = 0; i < this.length; i++) {
+        arr.push(callbackFn(this[i], i, this));
     }
-    console.timeEnd();
-};
-
-document.getElementById("ttl").onclick = () => {
-    console.log("title");
+    return arr;
 };
