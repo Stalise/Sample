@@ -12,8 +12,11 @@ import {
     CallbackCheck,
 } from "containers";
 
+import { CheckError } from "../../check";
+
 export const HomePage: FC = () => (
     <Fragment>
+        {/* <CheckError /> */}
         {/* <ProfilerCheck /> */}
         {/* <StrictMode>
             <StrictModeCheck />
