@@ -4,7 +4,7 @@ export interface IItem {
     last_name: string;
     email: string;
     gender: string;
-    ip_address: string;
+    ip_address: string | number;
 }
 
 export interface ITodo {
